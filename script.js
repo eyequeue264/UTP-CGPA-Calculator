@@ -2,29 +2,25 @@ function addRow() {
     const table = document.getElementById("courses");
     const newRow = table.insertRow();
 
-    newRow.innerHTML = `
-        <td><input type="text" placeholder="Course Name"></td>
-        <td><input type="number" placeholder="Credit Hours"></td>
-        <td>
-            <select>
-                <option value="4.0">A (4.0)</option>
-                <option value="3.75">A- (3.75)</option>
-                <option value="3.5">B+ (3.5)</option>
-                <option value="3.0">B (3.0)</option>
-                <option value="2.5">C+ (2.5)</option>
-                <option value="2.0">C (2.0)</option>
-                <option value="1.5">D+ (1.5)</option>
-                <option value="1.0">D (1.0)</option>
-                <option value="0.0">F (0.0)</option>
-            </select>
-        </td>
-        <td><button class="remove-btn" onclick="removeRow(this)">Remove</button></td>
-    `;
-}
+    const courseCell = newRow.insertCell(0);
+    const creditCell = newRow.insertCell(1);
+    const gradeCell = newRow.insertCell(2);
 
-function removeRow(button) {
-    const row = button.parentElement.parentElement;
-    row.remove();
+    courseCell.innerHTML = '<input type="text" placeholder="Course Name">';
+    creditCell.innerHTML = '<input type="number" placeholder="Credit Hours">';
+    gradeCell.innerHTML = `
+        <select>
+            <option value="4.0">A (4.0)</option>
+            <option value="3.75">A- (3.75)</option>
+            <option value="3.5">B+ (3.5)</option>
+            <option value="3.0">B (3.0)</option>
+            <option value="2.5">C+ (2.5)</option>
+            <option value="2.0">C (2.0)</option>
+            <option value="1.5">D+ (1.5)</option>
+            <option value="1.0">D (1.0)</option>
+            <option value="0.0">F (0.0)</option>
+        </select>
+    `;
 }
 
 function calculateCGPA() {

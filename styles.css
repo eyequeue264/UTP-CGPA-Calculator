@@ -42,7 +42,7 @@ button {
     width: 100%;
     padding: 10px;
     border: none;
-    background-color: #808080; /* Gray color */
+    background-color: #007bff; /* Blue color */
     color: white;
     font-size: 16px;
     border-radius: 5px;
@@ -50,7 +50,7 @@ button {
 }
 
 button:hover {
-    background-color: #565656; /* Darker gray on hover */
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
 .result {
@@ -60,7 +60,7 @@ button:hover {
     color: #333;
 }
 
-/* Sidebar style for mobile view */
+/* Sidebar style */
 .sidebar {
     position: absolute;
     right: 0;
@@ -72,10 +72,9 @@ button:hover {
     height: 100%;
     overflow-y: auto;
     box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.1);
-    display: block;
 }
 
-/* Make the sidebar content scrollable on small screens */
+/* Responsive styles for mobile and tablet devices */
 @media (max-width: 768px) {
     .sidebar {
         position: relative;
@@ -93,7 +92,6 @@ button:hover {
     }
 }
 
-/* For very small mobile screens */
 @media (max-width: 480px) {
     .container {
         padding: 10px; /* Reduce padding for very small screens */
