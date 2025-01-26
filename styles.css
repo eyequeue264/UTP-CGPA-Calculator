@@ -1,38 +1,24 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     height: 100vh;
     background-color: #f4f4f9;
 }
 
-/* Container Styles */
 .container {
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 400px;
-    margin-right: 20px;
+    width: 100%;
+    max-width: 400px; /* Limit max width to 400px for large screens */
 }
 
-/* Sidebar Styles */
-.sidebar {
-    background: #e0e0e0;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    width: 250px;
-    height: auto;
-    max-height: 90vh;
-    overflow-y: auto;
-}
-
-h1, h2 {
+h1 {
     text-align: center;
 }
 
@@ -56,7 +42,7 @@ button {
     width: 100%;
     padding: 10px;
     border: none;
-    background-color: #7e7e7e;
+    background-color: #808080; /* Gray color */
     color: white;
     font-size: 16px;
     border-radius: 5px;
@@ -64,20 +50,7 @@ button {
 }
 
 button:hover {
-    background-color: #5c5c5c;
-}
-
-.remove-btn {
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.remove-btn:hover {
-    background-color: #c0392b;
+    background-color: #565656; /* Darker gray on hover */
 }
 
 .result {
@@ -85,4 +58,52 @@ button:hover {
     text-align: center;
     font-size: 18px;
     color: #333;
+}
+
+/* Sidebar style for mobile view */
+.sidebar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: #f4f4f9;
+    width: 300px;
+    padding: 10px;
+    border-left: 1px solid #ccc;
+    height: 100%;
+    overflow-y: auto;
+    box-shadow: -2px 0px 10px rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+/* Make the sidebar content scrollable on small screens */
+@media (max-width: 768px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        box-shadow: none;
+    }
+
+    .container {
+        max-width: 100%; /* Allow container to take up full width on mobile */
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Slightly smaller heading */
+    }
+}
+
+/* For very small mobile screens */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px; /* Reduce padding for very small screens */
+    }
+
+    button {
+        font-size: 14px; /* Reduce button font size */
+    }
+
+    .result {
+        font-size: 16px; /* Adjust result text for smaller screens */
+    }
 }
